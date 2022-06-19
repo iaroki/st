@@ -94,7 +94,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
-#include "themes/gruvbox.h"
+#include "themes/kanagawa.h"
 
 /*
  * Default colors (colorname index)
