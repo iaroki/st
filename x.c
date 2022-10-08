@@ -1487,6 +1487,7 @@ xdrawglyphfontspecs(const XftGlyphFontSpec *specs, Glyph base, int len, int x, i
 		XftDrawRect(xw.draw, bg, winx, winy, width, win.ch);
   }
 
+  if (dmode & DRAW_FG) {
     /* Render the glyphs. */
     XftDrawGlyphFontSpec(xw.draw, fg, specs, len);
 
