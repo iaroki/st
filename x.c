@@ -1497,12 +1497,12 @@ xdrawglyphfontspecs(const XftGlyphFontSpec *specs, Glyph base, int len, int x, i
 
 		/* Render underline and strikethrough. */
 		if (base.mode & ATTR_UNDERLINE) {
-			XftDrawRect(xw.draw, fg, winx, winy + win.cyo + dc.font.ascent + 1,
+			XftDrawRect(xw.draw, fg, winx, winy + dc.font.ascent + 1,
 					width, 1);
 		}
 
 		if (base.mode & ATTR_STRUCK) {
-			XftDrawRect(xw.draw, fg, winx, winy + win.cyo + 2 * dc.font.ascent / 3,
+			XftDrawRect(xw.draw, fg, winx, winy + 2 * dc.font.ascent / 3,
 					width, 1);
 		}
 	}
@@ -1660,7 +1660,7 @@ xstartdraw(void)
 void
 xdrawline(Line line, int x1, int y1, int x2)
 {
-	int i, x, ox, numspecs;
+	int i, x, ox, numspecs, numspecs_cached;
 	Glyph base, new;
   XftGlyphFontSpec *specs;
 
